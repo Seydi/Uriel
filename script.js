@@ -1,4 +1,15 @@
 $(document).ready(function(){
+
+
+//To validate the phone number input
+  function validatenumber(number) 
+{
+  var regex = /^(?:(?:\(?(?:00|\+)([1-4]\d\d|[1-9]\d?)\)?)?[\-\.\ \\\/]?)?((?:\(?\d{1,}\)?[\-\.\ \\\/]?){0,})(?:[\-\.\ \\\/]?(?:#|ext\.?|extension|x)[\-\.\ \\\/]?(\d+))?$/i;
+
+;
+  return regex.test(number);
+}
+
 // Actions/User Interaction
 // When the "about" button is clicked, scroll to the about div
 $("#aboutbut").click(function() {
@@ -44,8 +55,27 @@ var name;
 var number;
 
 name = prompt("Don't panic. We'll send help your way in no time. Please enter your emergency contact's name");
+if (name == null || name== ''){
+  while (name == null || name==''){
+    name = prompt("You did not enter a name. To make sure you're safe, please enter your emergency contact's name");
+  }
+}
 var prompt2message = "Thank you. Now enter " + name + "'s phone number";
+var prompt2message2 = "You did not enter a phone number. To make sure you're safe, please enter " + name + "'s phone number";
+
 number = prompt(prompt2message);
+if (number == null || number == ''){
+  while (number == null || number==''){
+    number = prompt(prompt2message2);
+  }
+}
+var prompt2message3 = "The phone number you entered is invalid. Make sure to enter a valid phone number";
+if (!validatenumber(number)){
+  while (!validatenumber(number)){
+  number = prompt(prompt2message3);
+  }
+}
+
 var alertmessage = "Thank you! " + name + " has been alerted and given your exact location. We are also alerting the nearest authorities. Thank you for your patience.";
 alert(alertmessage);
 
