@@ -1,5 +1,10 @@
 $(document).ready(function(){
 
+    $('body').restive({
+          breakpoints: ['10000'],
+          classes: ['nb'],
+          turbo_classes: 'is_mobile=mobi,is_phone=phone,is_tablet=tablet,is_landscape=landscape'
+    });
 
 //To validate the phone number input
   function validatenumber(number) 
