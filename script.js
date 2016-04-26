@@ -1,20 +1,5 @@
 $(document).ready(function(){
 
- $.restive.startMulti();
-    
-$('body').restive({
-      platform: 'ios', 
-      breakpoints: ['240', '320', '480', '640', '960', '1024'],
-      classes: ['css-i-240', 'css-i-320', 'css-i-480', 'css-i-640', 'css-i-960', 'css-i-1024']
-});
-    
-$('body').restive({
-      platform: 'android', 
-      breakpoints: ['240', '320', '480', '640', '960', '1024'],
-      classes: ['css-a-240', 'css-a-320', 'css-a-480', 'css-a-640', 'css-a-960', 'css-a-1024']
-});
-    
-$.restive.endMulti();
 
 //To validate the phone number input
   function validatenumber(number) 
